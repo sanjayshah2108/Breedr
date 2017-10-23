@@ -7,9 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE1593DF1F96EF6B00EF06EC /* Pet.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1593DE1F96EF6B00EF06EC /* Pet.m */; };
+		CE1593E21F96EFE700EF06EC /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1593E11F96EFE700EF06EC /* Person.m */; };
+		CE1593E51F96F32C00EF06EC /* MateFeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1593E41F96F32C00EF06EC /* MateFeedTableViewCell.m */; };
+		CE1594701F993FD300EF06EC /* Vet.m in Sources */ = {isa = PBXBuildFile; fileRef = CE15946F1F993FD300EF06EC /* Vet.m */; };
+		CE1594731F993FEA00EF06EC /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1594721F993FEA00EF06EC /* Store.m */; };
+		CE1594761F9941AA00EF06EC /* Baby.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1594751F9941AA00EF06EC /* Baby.m */; };
+		CE1594791F99425800EF06EC /* Litter.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1594781F99425800EF06EC /* Litter.m */; };
+		CE15947C1F99441B00EF06EC /* AddPetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE15947B1F99441B00EF06EC /* AddPetViewController.m */; };
+		CE15947F1F994B2000EF06EC /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE15947E1F994B2000EF06EC /* ProfileViewController.m */; };
+		CE1594821F99698F00EF06EC /* ProfilePetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1594811F99698F00EF06EC /* ProfilePetTableViewCell.m */; };
+		CE1595221F9D1DEF00EF06EC /* PetImagesCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1595211F9D1DEF00EF06EC /* PetImagesCollectionViewLayout.m */; };
+		CE1595251F9D235600EF06EC /* PetImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1595241F9D235600EF06EC /* PetImageCollectionViewCell.m */; };
 		CE913AAD1F95B32C00F2F097 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE913AAC1F95B32C00F2F097 /* AppDelegate.m */; };
 		CE913AB01F95B32C00F2F097 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE913AAF1F95B32C00F2F097 /* FirstViewController.m */; };
-		CE913AB31F95B32C00F2F097 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE913AB21F95B32C00F2F097 /* SecondViewController.m */; };
+		CE913AB31F95B32C00F2F097 /* MateFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE913AB21F95B32C00F2F097 /* MateFeedViewController.m */; };
 		CE913AB61F95B32C00F2F097 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE913AB41F95B32C00F2F097 /* Main.storyboard */; };
 		CE913AB81F95B32C00F2F097 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE913AB71F95B32C00F2F097 /* Assets.xcassets */; };
 		CE913ABB1F95B32C00F2F097 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE913AB91F95B32C00F2F097 /* LaunchScreen.storyboard */; };
@@ -36,13 +48,37 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE1593DD1F96EF6B00EF06EC /* Pet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pet.h; sourceTree = "<group>"; };
+		CE1593DE1F96EF6B00EF06EC /* Pet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pet.m; sourceTree = "<group>"; };
+		CE1593E01F96EFE700EF06EC /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		CE1593E11F96EFE700EF06EC /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		CE1593E31F96F32C00EF06EC /* MateFeedTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MateFeedTableViewCell.h; sourceTree = "<group>"; };
+		CE1593E41F96F32C00EF06EC /* MateFeedTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MateFeedTableViewCell.m; sourceTree = "<group>"; };
+		CE15946E1F993FD300EF06EC /* Vet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vet.h; sourceTree = "<group>"; };
+		CE15946F1F993FD300EF06EC /* Vet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Vet.m; sourceTree = "<group>"; };
+		CE1594711F993FEA00EF06EC /* Store.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Store.h; sourceTree = "<group>"; };
+		CE1594721F993FEA00EF06EC /* Store.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Store.m; sourceTree = "<group>"; };
+		CE1594741F9941AA00EF06EC /* Baby.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Baby.h; sourceTree = "<group>"; };
+		CE1594751F9941AA00EF06EC /* Baby.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Baby.m; sourceTree = "<group>"; };
+		CE1594771F99425800EF06EC /* Litter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Litter.h; sourceTree = "<group>"; };
+		CE1594781F99425800EF06EC /* Litter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Litter.m; sourceTree = "<group>"; };
+		CE15947A1F99441B00EF06EC /* AddPetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddPetViewController.h; sourceTree = "<group>"; };
+		CE15947B1F99441B00EF06EC /* AddPetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddPetViewController.m; sourceTree = "<group>"; };
+		CE15947D1F994B2000EF06EC /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		CE15947E1F994B2000EF06EC /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		CE1594801F99698F00EF06EC /* ProfilePetTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfilePetTableViewCell.h; sourceTree = "<group>"; };
+		CE1594811F99698F00EF06EC /* ProfilePetTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfilePetTableViewCell.m; sourceTree = "<group>"; };
+		CE1595201F9D1DEF00EF06EC /* PetImagesCollectionViewLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PetImagesCollectionViewLayout.h; sourceTree = "<group>"; };
+		CE1595211F9D1DEF00EF06EC /* PetImagesCollectionViewLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PetImagesCollectionViewLayout.m; sourceTree = "<group>"; };
+		CE1595231F9D235600EF06EC /* PetImageCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PetImageCollectionViewCell.h; sourceTree = "<group>"; };
+		CE1595241F9D235600EF06EC /* PetImageCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PetImageCollectionViewCell.m; sourceTree = "<group>"; };
 		CE913AA81F95B32C00F2F097 /* Breeder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Breeder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE913AAB1F95B32C00F2F097 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CE913AAC1F95B32C00F2F097 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CE913AAE1F95B32C00F2F097 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		CE913AAF1F95B32C00F2F097 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		CE913AB11F95B32C00F2F097 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		CE913AB21F95B32C00F2F097 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		CE913AB11F95B32C00F2F097 /* MateFeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MateFeedViewController.h; sourceTree = "<group>"; };
+		CE913AB21F95B32C00F2F097 /* MateFeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MateFeedViewController.m; sourceTree = "<group>"; };
 		CE913AB51F95B32C00F2F097 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE913AB71F95B32C00F2F097 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE913ABA1F95B32C00F2F097 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -106,11 +142,35 @@
 			children = (
 				CE913AAB1F95B32C00F2F097 /* AppDelegate.h */,
 				CE913AAC1F95B32C00F2F097 /* AppDelegate.m */,
+				CE15947D1F994B2000EF06EC /* ProfileViewController.h */,
+				CE15947E1F994B2000EF06EC /* ProfileViewController.m */,
+				CE15947A1F99441B00EF06EC /* AddPetViewController.h */,
+				CE15947B1F99441B00EF06EC /* AddPetViewController.m */,
+				CE1595231F9D235600EF06EC /* PetImageCollectionViewCell.h */,
+				CE1595241F9D235600EF06EC /* PetImageCollectionViewCell.m */,
+				CE1595201F9D1DEF00EF06EC /* PetImagesCollectionViewLayout.h */,
+				CE1595211F9D1DEF00EF06EC /* PetImagesCollectionViewLayout.m */,
+				CE913AB11F95B32C00F2F097 /* MateFeedViewController.h */,
+				CE913AB21F95B32C00F2F097 /* MateFeedViewController.m */,
+				CE1593E31F96F32C00EF06EC /* MateFeedTableViewCell.h */,
+				CE1593E41F96F32C00EF06EC /* MateFeedTableViewCell.m */,
+				CE913AB41F95B32C00F2F097 /* Main.storyboard */,
+				CE1594741F9941AA00EF06EC /* Baby.h */,
+				CE1594751F9941AA00EF06EC /* Baby.m */,
+				CE1594771F99425800EF06EC /* Litter.h */,
+				CE1594801F99698F00EF06EC /* ProfilePetTableViewCell.h */,
+				CE1594811F99698F00EF06EC /* ProfilePetTableViewCell.m */,
+				CE1594781F99425800EF06EC /* Litter.m */,
+				CE1593DD1F96EF6B00EF06EC /* Pet.h */,
+				CE1593DE1F96EF6B00EF06EC /* Pet.m */,
+				CE15946E1F993FD300EF06EC /* Vet.h */,
+				CE15946F1F993FD300EF06EC /* Vet.m */,
+				CE1594711F993FEA00EF06EC /* Store.h */,
+				CE1594721F993FEA00EF06EC /* Store.m */,
+				CE1593E01F96EFE700EF06EC /* Person.h */,
+				CE1593E11F96EFE700EF06EC /* Person.m */,
 				CE913AAE1F95B32C00F2F097 /* FirstViewController.h */,
 				CE913AAF1F95B32C00F2F097 /* FirstViewController.m */,
-				CE913AB11F95B32C00F2F097 /* SecondViewController.h */,
-				CE913AB21F95B32C00F2F097 /* SecondViewController.m */,
-				CE913AB41F95B32C00F2F097 /* Main.storyboard */,
 				CE913AB71F95B32C00F2F097 /* Assets.xcassets */,
 				CE913AB91F95B32C00F2F097 /* LaunchScreen.storyboard */,
 				CE913ABC1F95B32C00F2F097 /* Info.plist */,
@@ -270,10 +330,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE913AB31F95B32C00F2F097 /* SecondViewController.m in Sources */,
+				CE1593E21F96EFE700EF06EC /* Person.m in Sources */,
+				CE1593E51F96F32C00EF06EC /* MateFeedTableViewCell.m in Sources */,
+				CE913AB31F95B32C00F2F097 /* MateFeedViewController.m in Sources */,
+				CE1594821F99698F00EF06EC /* ProfilePetTableViewCell.m in Sources */,
+				CE1594791F99425800EF06EC /* Litter.m in Sources */,
 				CE913AAD1F95B32C00F2F097 /* AppDelegate.m in Sources */,
 				CE913ABE1F95B32C00F2F097 /* main.m in Sources */,
+				CE1595221F9D1DEF00EF06EC /* PetImagesCollectionViewLayout.m in Sources */,
+				CE1594761F9941AA00EF06EC /* Baby.m in Sources */,
 				CE913AB01F95B32C00F2F097 /* FirstViewController.m in Sources */,
+				CE1595251F9D235600EF06EC /* PetImageCollectionViewCell.m in Sources */,
+				CE1594731F993FEA00EF06EC /* Store.m in Sources */,
+				CE15947F1F994B2000EF06EC /* ProfileViewController.m in Sources */,
+				CE1593DF1F96EF6B00EF06EC /* Pet.m in Sources */,
+				CE15947C1F99441B00EF06EC /* AddPetViewController.m in Sources */,
+				CE1594701F993FD300EF06EC /* Vet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
