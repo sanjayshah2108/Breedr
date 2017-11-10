@@ -24,6 +24,9 @@
 
 @interface AddPetViewController : UIViewController
 
+
+@property Pet *pet;
+
 @property (nonatomic, weak) id <AddPetViewControllerDelegate> delegate;
 
 @end

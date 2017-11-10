@@ -17,11 +17,12 @@
 @property NSInteger petAge;
 @property NSMutableArray *petImageArray;
 @property NSString* petGender;
+@property NSMutableArray *petDocumentArray;
+
 //@property (weak) NSMutableArray<Litter*> * previousLittersArray;
 
 
--(instancetype) initWithName:(NSString*) name Breed:(NSString*) breed Age:(NSInteger) age ImageArray:(NSMutableArray*) imageArray Gender:(NSString*) gender;
-
+-(instancetype) initWithName:(NSString*) name Breed:(NSString*) breed Age:(NSInteger) age ImageArray:(NSMutableArray*) imageArray Gender:(NSString*) gender DocumentArray:(NSMutableArray*) documentArray;
 
 
 @end

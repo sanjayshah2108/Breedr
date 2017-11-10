@@ -10,7 +10,7 @@
 
 @implementation Pet
 
--(instancetype) initWithName:(NSString*) name Breed:(NSString*) breed Age:(NSInteger) age ImageArray:(NSMutableArray*) imageArray Gender:(NSString*) gender{
+-(instancetype) initWithName:(NSString*) name Breed:(NSString*) breed Age:(NSInteger) age ImageArray:(NSMutableArray*) imageArray Gender:(NSString*) gender DocumentArray:(NSMutableArray*) documentArray{
     
     self = [super init];
     
@@ -21,6 +21,9 @@
         _petAge = age;
         _petImageArray = imageArray;
         _petGender = gender;
+        _petDocumentArray = documentArray;
+        
+        
         
     }
     return  self;

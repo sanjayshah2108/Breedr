@@ -14,7 +14,7 @@
 
 
 
-@interface AddPetViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface AddPetViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UITextField *petNameTextField;
@@ -23,9 +23,11 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *petImagesCollectionView;
 @property NSMutableArray<UIImage*> *petImagesArray;
 @property (weak, nonatomic) IBOutlet UITextField *petGenderTextField;
-
+@property (weak, nonatomic) IBOutlet UIView *documentsContainerView;
+@property NSMutableArray<UIImage*> *petDocumentArray;
 
 @property UIImagePickerController *petImagePicker;
+
 
 
 @end
@@ -34,6 +36,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.petNameTextField.delegate = self;
+    self.petDOBTextField.delegate = self;
+    self.petBreedTextField.delegate = self;
+    self.petGenderTextField.delegate = self;
+    
+    
+    if(self.pet){
+        self.petImagesArray = self.pet.petImageArray;
+        self.petNameTextField.text = self.pet.petName;
+        self.petBreedTextField.text = self.pet.petBreed;
+        self.petDOBTextField.text = [NSString stringWithFormat:@"%ld", (long)self.pet.petAge];
+        self.petGenderTextField.text = self.pet.petGender;
+        self.petDocumentArray = self.pet.petDocumentArray;
+        
+        self.navigationItem.title = self.pet.petName;
+        
+    }
+    else {
+        
+    }
     
     NSMutableArray *petImagesArray = [[NSMutableArray alloc] init];
     
@@ -56,9 +79,9 @@
     self.petImagesCollectionView.delegate = self;
     self.petImagesCollectionView.dataSource = self;
     
+    
+    
     [self.petImagesCollectionView reloadData];
-    
-    
 
 }
 
@@ -83,6 +106,11 @@
 }
 
 
+-(BOOL) textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
+
 
 //
 //RFQuiltLayout* layout = (id)[self.collectionView collectionViewLayout];
@@ -98,17 +126,30 @@
 //}
 
 
-
-- (IBAction)addNewPet:(UIButton *)sender {
+- (IBAction)addNewPet:(UIBarButtonItem *)sender {
     
-    Pet *newPet = [[Pet alloc] initWithName:self.petNameTextField.text
-                                      Breed:self.petBreedTextField.text
-                                        Age:[self.petDOBTextField.text integerValue]
-                                 ImageArray:self.petImagesArray
-                                     Gender:self.petGenderTextField.text];
+    if(!self.pet){
+
+    self.pet = [[Pet alloc] initWithName:self.petNameTextField.text Breed:self.petBreedTextField.text Age:[self.petDOBTextField.text integerValue] ImageArray:self.petImagesArray Gender:self.petGenderTextField.text DocumentArray:self.petDocumentArray];
+        
+         [self.delegate addPet:self.pet];
+    }
+    
+    else {
+    
+    self.pet.petName = self.petNameTextField.text;
+    self.pet.petBreed = self.petBreedTextField.text;
+    self.pet.petAge = [self.petDOBTextField.text integerValue];
+    self.pet.petDocumentArray = self.petDocumentArray;
+    self.pet.petImageArray = self.petImagesArray;
+    self.pet.petGender = self.petGenderTextField.text;
+        
+    }
+    
+    
     
     NSLog(@"Passing back the pet With the data");
-    [self.delegate addPet:newPet];
+   
     
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -157,11 +198,45 @@
         UIImagePickerController *picker = [[UIImagePickerController alloc] init];
         picker.delegate = self;
         
-        //use photo library as our source
-        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        UIAlertController * alert = [UIAlertController
+                                     alertControllerWithTitle:nil
+                                     message:nil
+                                     preferredStyle:UIAlertControllerStyleAlert];
         
-        //present this picker
-        [self presentViewController:picker animated:YES completion:nil];
+        
+        UIAlertAction* cameraButton = [UIAlertAction
+                                    actionWithTitle:@"Camera"
+                                    style:UIAlertActionStyleDefault
+                                    handler:^(UIAlertAction * action) {
+                                        //use Camera as our source
+                                        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+                                        //present this picker
+                                        [self presentViewController:picker animated:YES completion:nil];
+                                    }];
+        
+        UIAlertAction* photoLibraryButton = [UIAlertAction
+                                   actionWithTitle:@"Photo Library"
+                                   style:UIAlertActionStyleDefault
+                                   handler:^(UIAlertAction * action) {
+                                       
+                                       //use photo library as our source
+                                       picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                                       //present this picker
+                                       [self presentViewController:picker animated:YES completion:nil];
+                                      
+                                   }];
+        UIAlertAction* cancelButton = [UIAlertAction
+                                       actionWithTitle:@"Cancel"
+                                       style:UIAlertActionStyleCancel
+                                       handler:^(UIAlertAction * action) {
+                                           //Handle your yes please button action here
+                                       }];
+        
+        [alert addAction:cameraButton];
+        [alert addAction:photoLibraryButton];
+        [alert addAction:cancelButton];
+
+        [self presentViewController:alert animated:true completion:nil];
     }
     
     //else if we click on an image
@@ -191,7 +266,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
 
 @end

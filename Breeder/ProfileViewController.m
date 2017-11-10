@@ -15,10 +15,15 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *petTableView;
 @property (weak, nonatomic) IBOutlet UILabel *personNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *personLocationLabel;
+
 @property (weak, nonatomic) IBOutlet UIImageView *personProfileImageView;
 @property Person *currentPerson;
 
 @property UIImagePickerController *profileImagePicker;
+
+@property (weak, nonatomic) IBOutlet UIButton *addPetButton;
+
 
 @end
 
@@ -31,12 +36,20 @@
     //only have 1 user right now
     self.currentPerson = [[Person alloc] init];
     self.currentPerson.name = [NSString stringWithFormat:@"Sanjay Shah"];
+    self.currentPerson.address = [NSString stringWithFormat:@"Vancouver"];
     self.personNameLabel.text = self.currentPerson.name;
+    self.personLocationLabel.text = self.currentPerson.address;
     self.currentPerson.petsArray = [[NSMutableArray alloc] init];
     
     //assign this profilViewController as a tableViewDelegate
     self.petTableView.delegate = self;
     self.petTableView.dataSource = self;
+    
+    
+    CALayer * addPetButtonLayer =self.addPetButton.layer;
+    addPetButtonLayer.cornerRadius = 5;
+    
+    
     
     
  
@@ -121,6 +134,24 @@
         addPetVC.delegate = self;
         
     }
+    
+    if ([segue.identifier isEqualToString:@"editPetSegue"]){
+        
+        //initiate addPetViewController and assign this profileViewController as a delegate
+
+        NSIndexPath *indexPath = self.petTableView.indexPathForSelectedRow;
+        
+        Pet *selectedPet = self.currentPerson.petsArray[indexPath.row];
+        
+        AddPetViewController *editPetViewController = [segue destinationViewController];
+        editPetViewController.delegate = self;
+        
+        editPetViewController.pet = selectedPet;
+        
+        
+    }
+    
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -149,15 +180,29 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
     ProfilePetTableViewCell *cell = [self.petTableView dequeueReusableCellWithIdentifier:@"myPetID" forIndexPath:indexPath];
-    
     cell.petNameLabel.text = [self.currentPerson.petsArray objectAtIndex:indexPath.row].petName;
-    cell.petImageView.image = [self.currentPerson.petsArray objectAtIndex:indexPath.row].petImageArray[0];
+    
+    if([self.currentPerson.petsArray objectAtIndex:indexPath.row].petImageArray.count ==0){
+        cell.petImageView.image = [UIImage imageNamed:@"placeholderPetImage"];
+    }
+    else {
+        cell.petImageView.image = [self.currentPerson.petsArray objectAtIndex:indexPath.row].petImageArray[0];
+    }
+    
+    cell.petImageView.layer.cornerRadius = 2;
     
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.currentPerson.petsArray.count;
+}
+
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self performSegueWithIdentifier:@"editPetSegue" sender:self];
+
+    
 }
 
 @end
